@@ -19,6 +19,8 @@ sudo apt-get install -qq libmagickwand-dev libvips-dev libmagic-dev graphicsmagi
  libmysqlclient-dev phantomjs
 
 # Install rvm, Ruby and gems
+echo "Installing rvm GPG key"
+curl -sSL https://rvm.io/mpapis.asc | gpg --import - > /dev/null 2>&1
 echo "Installing rvm"
 curl -sSL https://get.rvm.io | bash -s stable --ruby > /dev/null 2>&1
 echo "Installed `ruby --version`"
