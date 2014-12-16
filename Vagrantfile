@@ -15,6 +15,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # TODO: https://github.com/mitchellh/vagrant/issues/1673
 
+  config.vm.provider :virtualbox do |vb|
+    vb.customize ["modifyvm", :id, "--memory", "2048"]
+    vb.customize ["modifyvm", :id, "--cpus", "2"]   
+  end
+
   # execute boostrap.sh to install Sufia
   config.vm.provision :shell, path: "bootstrap.sh"
 end
